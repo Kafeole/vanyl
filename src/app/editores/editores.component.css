@@ -1,0 +1,144 @@
+
+.btn-beautify {
+    color: #ffffff;
+    background-color: #e83e8c;
+}
+
+div.code-editor {
+    max-height: 170vh;
+    overflow-y: visible;
+}
+
+.output {
+  min-height: 700px;
+    border-bottom-left-radius: .5rem!important;
+    border-bottom-right-radius: .5rem!important;
+}
+
+div.label-box {
+    border-top-left-radius: .5rem!important;
+    border-top-right-radius: .5rem!important;
+}
+/* /////////// */
+
+
+ mat-list-option[aria-selected="true"] {
+    background: rgba(0, 139, 139, 0.7);
+    color: white;
+    width: 80%;
+    width: 80%;
+  }
+
+  mat-list-option[aria-selected="false"] {
+    width: 80%;
+  }
+
+  mat-tab-label-active {
+    background-color: #00ADEE !important;
+}
+
+ .list {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, .87);
+    text-align: left;
+    height: 40px;
+    margin-left: 32px;
+    margin-right: 40px;
+    padding-top: 16px;
+    padding-left: 16px;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+   }
+
+  .list:hover {
+    font-weight: bold;
+    background-color: #9ecacf;
+  }
+
+  .col {
+    overflow-x: hidden;
+  }
+
+  .mat-list-icon {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  #btnimp{
+    background-color: rgba(0, 139, 139, 0.7);
+    width:78%;
+
+  }
+
+  .mat-header-cell {
+    background-color: /*#980000*/ rgba(0, 139, 139, 0.7);
+      font-size: 1.2em;
+
+  }
+
+  mat-table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  td {
+    overflow: hidden;
+    width: 230px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  table th{
+    overflow: hidden;
+    width: 230px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    color:white;
+  }
+
+  #idhead{
+    width: 130px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  #idcell{
+    width: 130px;
+    text-align: center;
+    color: white;
+    padding-right: 20px;
+    background-color: /*#980000*/rgba(0, 139, 139, 0.7);
+    font-size: 1.2em;
+  }
+
+
+  mat-icon{
+    font-family: 'Material Icons' !important;
+    }
+
+    .example-container {
+      height: auto;
+      width: 1110px;
+      overflow: auto;
+    }
+
+    .mat-flat-button {
+      margin: 5px;
+    }
+
+    .input{
+      border: none transparent;
+      outline: none;
+    }
+
+    .mat-radio-button ~ .mat-radio-button {
+      margin-left: 16px;
+    }
