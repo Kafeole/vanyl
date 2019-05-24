@@ -34,7 +34,7 @@ div.label-box {
   }
 
   mat-tab-label-active {
-    background-color: #00ADEE !important;
+    /* background-color: #00ADEE !important; */
 }
 
  .list {
@@ -70,7 +70,7 @@ div.label-box {
   }
 
   .mat-header-cell {
-    background-color: /*#980000*/ rgba(0, 139, 139, 0.7);
+
       font-size: 1.2em;
 
   }
@@ -149,5 +149,5 @@ div.label-box {
     }
 
     #editor{
-      
+
     }

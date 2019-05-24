@@ -81,10 +81,11 @@
          </mat-tab>
 
        <mat-tab label="Opciones"  style=" overflow: hidden!important">
-         <div class="example-container mat-elevation-z8">
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+          <!-- class="example-container mat-elevation-z8" -->
+         <div class="navbar navbar-light bg-light ">
+          <table mat-table [dataSource]="dataSource" class="bg-light" >
               <ng-container matColumnDef="nombre">
-                  <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                  <th mat-header-cell *matHeaderCellDef></th>
                   <td mat-cell *matCellDef="let mo">
                     <input mat-input [(ngModel)]="mo.nombre"/>
                   </td>
