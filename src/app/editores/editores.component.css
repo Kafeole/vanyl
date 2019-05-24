@@ -10,7 +10,7 @@ div.code-editor {
 }
 
 .output {
-  min-height: 700px;
+     min-height: 700px;
     border-bottom-left-radius: .5rem!important;
     border-bottom-right-radius: .5rem!important;
 }
@@ -141,4 +141,13 @@ div.label-box {
 
     .mat-radio-button ~ .mat-radio-button {
       margin-left: 16px;
+    }
+
+
+    #editor{
+
+    }
+
+    #editor{
+      
     }

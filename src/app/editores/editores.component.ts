@@ -54,6 +54,7 @@ export class EditoresComponent implements AfterViewInit {
   private codeC: ace.Ace.Editor;
   private codeD: ace.Ace.Editor;
   private editorBeautify;
+  public notImported: boolean = true;
   librerias: any = [];
   libreriasProyecto: any = [];
   calledLib: string[] = [];
@@ -267,13 +268,15 @@ export class EditoresComponent implements AfterViewInit {
    */
   onImport(modelo: ProyectoDto){
 
-   // this.librerias = [];
-    this.aImportar = '';
-    var proyecto =  this.listadoProyectos.find(x => x.ident === modelo.ident);
-    this.currentProyectoId = modelo.ident.toString();
-    this.currentProyectoName = modelo.nombre;
 
     if (window.confirm('Confirmar importación?')) {
+
+      this.aImportar = '';
+      this.notImported = false;
+      var proyecto =  this.listadoProyectos.find(x => x.ident === modelo.ident);
+      this.currentProyectoId = modelo.ident.toString();
+      this.currentProyectoName = modelo.nombre;
+      this.scriptsaEliminar = [];
 
       if (proyecto.modeloHtml != null) {
         this.codeH.setValue(proyecto.modeloHtml.valor);
@@ -290,6 +293,7 @@ export class EditoresComponent implements AfterViewInit {
         this.codeD.setValue('[];');
       }
 
+      this.libreriasProyecto = [];
       if (proyecto.librerias != null) {
         for (let libP of proyecto.librerias) {
           console.log(libP);
@@ -298,6 +302,7 @@ export class EditoresComponent implements AfterViewInit {
         }
       }
       this.compile();
+      this.scriptsaEliminar = [];
     }
   }
 
@@ -406,7 +411,48 @@ export class EditoresComponent implements AfterViewInit {
         this.restApi.deleteLibsOfProyectoDTO(this.currentProyectoId, id).subscribe(data => {
         });
       }
+      this.scriptsaEliminar = [];
     }
+  }
+
+
+
+  updateLib(){
+    var mapaImps = new Map();
+    var count = 0;
+    for(let imp of this.calledLib){
+       mapaImps[count] = imp;
+       count++;
+    }
+    this.restApi.createMidwayDTO(this.currentProyectoId, mapaImps).subscribe(data => {
+        });
+
+  }
+
+  recarga(){
+
+   // window.location.reload();
+   this.codeH.setValue('');
+   this.codeJ.setValue('');
+   this.codeC.setValue('');
+   this.codeD.setValue('[];');
+
+   var element = document.getElementById('code') as HTMLIFrameElement;
+   var code = element.contentWindow.document;
+   element.src = "about:blank";
+   this.notImported = true;
+   this.currentProyectoName = '';
+   this.currentProyectoId = '';
+   this.quiereimportar = this.sino[1].op;
+   this.libreriasProyecto = [];
+
+   this.configHTML();
+   this.configCSS();
+   this.configJS();
+   this.configDATA();
+   this.configLIB();
+   this.configProy();
+
   }
 
 }

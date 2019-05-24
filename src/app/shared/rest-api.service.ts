@@ -400,6 +400,15 @@ export class RestApiService {
     )
   }
 
+  // HttpClient API put() method => Update midway
+  createMidwayDTO(ident, mid: Map<string, string>){
+    return this.http.post(this.apiURL + '/midway/add/'+ ident , mid, this.httpOptions)
+    .pipe(
+      retry(0),
+      catchError(this.handleError)
+    )
+  }
+
   // Error handling
   handleError(error) {
     let errorMessage = '';
