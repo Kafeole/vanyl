@@ -5,7 +5,7 @@
 }
 
 div.code-editor {
-    max-height: 170vh;
+    max-height: infinite;
     overflow-y: visible;
 }
 
